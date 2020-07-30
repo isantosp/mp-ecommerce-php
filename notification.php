@@ -25,13 +25,13 @@
 
     // If the payment's transaction amount is equal (or bigger) than the merchant_order's amount you can release your items
     if($paid_amount >= $merchant_order->total_amount){
-        if (count($merchant_order->shipments)>0) { // The merchant_order has shipments
+        /*if (count($merchant_order->shipments)>0) { // The merchant_order has shipments
             if($merchant_order->shipments[0]->status == "ready_to_ship") {
                 print_r("Totally paid. Print the label and release your item.");
             }
         } else { // The merchant_order don't has any shipments
-            print_r("Totally paid. Release your item.");
-        }
+        }*/
+        print_r("Totally paid. Release your item.");
     } else {
         print_r("Not paid yet. Do not release your item.");
     }
