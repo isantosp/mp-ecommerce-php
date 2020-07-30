@@ -134,12 +134,18 @@
                                     </div>
                                     <!--button type="submit" class="mercadopago-button" formmethod="post">Pagar</button-->
 
-                                    <form action="/payment.php" method="GET">
+                                    <!--form action="/payment.php" method="GET">
                                         <script data-button-label="Pagar la compra"
                                         src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
                                         data-preference-id="<?php echo $preference->id; ?>">
                                         </script>
-                                    </form>
+                                    </form-->
+                                    <a mp-mode="dftl" href="https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=<?= $preference->id ?>" name="MP-payButton" class='mercadopago-button'>
+                                            Pagar la compra
+                                    </a>
+                                    <script type="text/javascript">
+                                    (function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
+                                    </script>
                                 </div>
                             </div>
                         </div>
