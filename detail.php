@@ -134,7 +134,7 @@
                                     </div>
                                     <!--button type="submit" class="mercadopago-button" formmethod="post">Pagar</button-->
 
-                                    <form action="/payment.php" method="POST">
+                                    <form action="/payment.php" method="GET">
                                         <script data-button-label="Pagar la compra"
                                         src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
                                         data-preference-id="<?php echo $preference->id; ?>">
