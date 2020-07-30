@@ -16,11 +16,8 @@
             break;
     }
 
-    $headers = "From: from@webhookservesite.ru";
-    $message = print_r($_POST,true);
-    @mail('untalivan@isantosp.com', 'MP TEST', $message, $headers);
-
-    echo"ok";
+    $json = file_get_contents('php://input');
+    error_log("JSON_RECIBIDO: ".$json);
 
     $paid_amount = 0;
     foreach ($merchant_order->payments as $payment) {
