@@ -26,3 +26,6 @@ switch($_GET['res']){
 }
 
 ?>
+
+<hr>
+<a href="/">Regresar</a>
