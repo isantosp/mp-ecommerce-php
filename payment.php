@@ -16,6 +16,7 @@ switch($_GET['res']){
     case 'success':
         echo '<h1>Pago EXITOSO!</h1>';
         echo '<hr>';
+        echo '<strong>preference_id</strong>: '.$_GET['preference_id'].'<br>';
         echo '<strong>external_reference</strong>: '.$_GET['external_reference'].'<br>';
         echo '<strong>collection_id</strong>: '.$_GET['collection_id'].'<br>';
         echo '<strong>payment_type</strong>: '.$_GET['payment_type'].'<br>';
